@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coffee</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div>
+        <h3>COFFEE</h3>
+        <a href="{{ url_for('ingredients') }}">INGREDIENTS</a>
+    </div>
+
+
+    <div>
+        <form action="{{ url_for('order')}}" method="POST">
+            <label for="coffee_id">COFFEE ID</label>
+            <input type="text" list="ids" name="coffee_id" required>
+            <datalist id="ids">
+                <option value="SA">SA</option>
+                <option value="MA">MA</option>
+                <option value="LA">LA</option>
+                <option value="SC">SC</option>
+                <option value="MC">MC</option>
+                <option value="LC">LC</option>
+                <option value="SE">SE</option>
+                <option value="ME">ME</option>
+                <option value="LE">LE</option>
+            </datalist>
+
+            <label for="unit">Name</label>
+            <input type="text" list="types" name="unit" required>
+            <datalist id="types">
+                <option value="Americano">Americano</option>
+                <option value="Cappuccino">Cappuccino</option>
+                <option value="Espresso">Espresso</option>
+            </datalist>
+
+            <label for="quantity">Size</label>
+            <input type="text" list="sizes" name="quantity" required>
+            <datalist id="sizes">
+                <option value="Small">Small</option>
+                <option value="Medium">Medium</option>
+                <option value="Large">Large</option>
+            </datalist>
+
+            <label for="amount">Quantity</label>
+            <input type="number" name="amount">
+
+            <button type="submit">ADD ORDER</button>
+        </form>
+    </div>
+</body>
+</html>
